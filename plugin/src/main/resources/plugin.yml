@@ -1,0 +1,43 @@
+name: ZyrexRanked
+version: '${project.version}'
+main: gg.zyrex.ranked.ZyrexRanked
+api-version: '1.21'
+description: Full ELO ranked system for Zyrex Network
+authors: [Zyrex]
+
+softdepend:
+  - PlaceholderAPI
+  - StrikePractice
+  - LuckPerms
+  - Vault
+
+commands:
+  ranked:
+    description: View your ranked stats
+    usage: /ranked [player]
+    aliases: [rank, elo, stats]
+  rankedadmin:
+    description: Admin commands for ranked system
+    usage: /rankedadmin <subcommand>
+    permission: zyrex.ranked.admin
+  challenge:
+    description: Challenge a player to a ranked match
+    usage: /challenge <player> <gamemode>
+  spectate:
+    description: Spectate an ongoing ranked match
+    usage: /spectate <player>
+  queue:
+    description: Join the ranked queue
+    usage: /queue <gamemode>
+  leavequeue:
+    description: Leave the ranked queue
+    usage: /leavequeue
+    aliases: [lq, dequeue]
+
+permissions:
+  zyrex.ranked.admin:
+    description: Access to /rankedadmin
+    default: op
+  zyrex.ranked.bypass:
+    description: Bypass queue restrictions
+    default: false

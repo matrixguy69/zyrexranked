@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #060608;
+    color: #f8fafc;
+  }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: #0d0d14; }
+  ::-webkit-scrollbar-thumb { background: #3a3a58; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #a855f7; }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-dark-600/60 backdrop-blur-sm border border-white/5 rounded-2xl;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:border-brand-primary/30 hover:shadow-glow-sm;
+  }
+
+  .rank-badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  }
+
+  .rank-champion  { @apply rank-badge bg-pink-500/20 text-pink-300 border border-pink-500/30; }
+  .rank-netherite { @apply rank-badge bg-zinc-500/20 text-zinc-300 border border-zinc-500/30; }
+  .rank-diamond   { @apply rank-badge bg-cyan-500/20 text-cyan-300 border border-cyan-500/30; }
+  .rank-platinum  { @apply rank-badge bg-teal-500/20 text-teal-300 border border-teal-500/30; }
+  .rank-gold      { @apply rank-badge bg-yellow-500/20 text-yellow-300 border border-yellow-500/30; }
+  .rank-silver    { @apply rank-badge bg-slate-500/20 text-slate-300 border border-slate-500/30; }
+  .rank-bronze    { @apply rank-badge bg-orange-500/20 text-orange-300 border border-orange-500/30; }
+  .rank-iron      { @apply rank-badge bg-gray-500/20 text-gray-400 border border-gray-500/30; }
+
+  .tab-btn {
+    @apply px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-slate-400 hover:text-white hover:bg-dark-400/50;
+  }
+  .tab-btn-active {
+    @apply tab-btn bg-brand-primary/20 text-brand-accent border border-brand-primary/40;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-primary to-brand-glow bg-clip-text text-transparent;
+  }
+
+  .win  { @apply text-emerald-400; }
+  .loss { @apply text-red-400; }
+  .draw { @apply text-yellow-400; }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}

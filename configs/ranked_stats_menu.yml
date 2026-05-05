@@ -1,0 +1,136 @@
+# ============================================================
+#  Zyrex Ranked — DeluxeMenus Stats GUI
+#  Place in: plugins/DeluxeMenus/gui_menus/ranked_stats.yml
+#  Command to open: /ranked (already registered by the plugin)
+# ============================================================
+
+menu_title: '&8&lZyrex &d&lRanked Stats'
+open_command: ranked
+size: 54
+
+items:
+  # ── Background filler ──────────────────────────────────────────
+  'filler':
+    material: BLACK_STAINED_GLASS_PANE
+    display_name: ' '
+    slots:
+      - 0-8
+      - 45-53
+      - 9
+      - 17
+      - 36
+      - 44
+
+  # ── Player head (center top) ───────────────────────────────────
+  'player_head':
+    material: PLAYER_HEAD
+    display_name: '&d&l%player_name%'
+    lore:
+      - '&8&m────────────────────'
+      - '&7Global ELO: &f%zyrex_elo% &8(&f%zyrex_rank%&8)'
+      - '&7Total W/L: &a%zyrex_wins%&7/&c%zyrex_losses%'
+      - '&8&m────────────────────'
+    skull_owner: '%player_name%'
+    slot: 4
+
+  # ── SMP / Crystal ─────────────────────────────────────────────
+  'smp_stats':
+    material: DIAMOND_SWORD
+    display_name: '&b&lSMP / Crystal PvP'
+    lore:
+      - '&8&m────────────────────'
+      - '&7ELO: &f%zyrex_elo_smp%'
+      - '&7Rank: &f%zyrex_rank_smp%'
+      - '&7Wins: &a%zyrex_wins_smp%'
+      - '&7Losses: &c%zyrex_losses_smp%'
+      - '&7W/L Ratio: &f%zyrex_wl_smp%'
+      - '&7Win Streak: &6%zyrex_streak_smp%'
+      - '&7Peak ELO: &e%zyrex_peak_smp%'
+      - '&8&m────────────────────'
+    slot: 19
+
+  # ── Pot PvP / NethPot ─────────────────────────────────────────
+  'pot_stats':
+    material: SPLASH_POTION
+    display_name: '&a&lPot PvP / NethPot'
+    lore:
+      - '&8&m────────────────────'
+      - '&7ELO: &f%zyrex_elo_pot%'
+      - '&7Rank: &f%zyrex_rank_pot%'
+      - '&7Wins: &a%zyrex_wins_pot%'
+      - '&7Losses: &c%zyrex_losses_pot%'
+      - '&7W/L Ratio: &f%zyrex_wl_pot%'
+      - '&7Win Streak: &6%zyrex_streak_pot%'
+      - '&7Peak ELO: &e%zyrex_peak_pot%'
+      - '&8&m────────────────────'
+    slot: 21
+
+  # ── UHC ───────────────────────────────────────────────────────
+  'uhc_stats':
+    material: GOLDEN_APPLE
+    display_name: '&e&lUHC'
+    lore:
+      - '&8&m────────────────────'
+      - '&7ELO: &f%zyrex_elo_uhc%'
+      - '&7Rank: &f%zyrex_rank_uhc%'
+      - '&7Wins: &a%zyrex_wins_uhc%'
+      - '&7Losses: &c%zyrex_losses_uhc%'
+      - '&7W/L Ratio: &f%zyrex_wl_uhc%'
+      - '&7Win Streak: &6%zyrex_streak_uhc%'
+      - '&7Peak ELO: &e%zyrex_peak_uhc%'
+      - '&8&m────────────────────'
+    slot: 23
+
+  # ── Sword / Axe / Mace ────────────────────────────────────────
+  'sword_stats':
+    material: NETHERITE_SWORD
+    display_name: '&6&lSword / Axe / Mace'
+    lore:
+      - '&8&m────────────────────'
+      - '&7ELO: &f%zyrex_elo_sword%'
+      - '&7Rank: &f%zyrex_rank_sword%'
+      - '&7Wins: &a%zyrex_wins_sword%'
+      - '&7Losses: &c%zyrex_losses_sword%'
+      - '&7W/L Ratio: &f%zyrex_wl_sword%'
+      - '&7Win Streak: &6%zyrex_streak_sword%'
+      - '&7Peak ELO: &e%zyrex_peak_sword%'
+      - '&8&m────────────────────'
+    slot: 25
+
+  # ── Spear Mace ────────────────────────────────────────────────
+  'spearmace_stats':
+    material: MACE
+    display_name: '&d&lSpear Mace'
+    lore:
+      - '&8&m────────────────────'
+      - '&7ELO: &f%zyrex_elo_spearmace%'
+      - '&7Rank: &f%zyrex_rank_spearmace%'
+      - '&7Wins: &a%zyrex_wins_spearmace%'
+      - '&7Losses: &c%zyrex_losses_spearmace%'
+      - '&7W/L Ratio: &f%zyrex_wl_spearmace%'
+      - '&7Win Streak: &6%zyrex_streak_spearmace%'
+      - '&7Peak ELO: &e%zyrex_peak_spearmace%'
+      - '&8&m────────────────────'
+    slot: 31
+
+  # ── Website button ────────────────────────────────────────────
+  'website':
+    material: BOOK
+    display_name: '&f&lLeaderboard Website'
+    lore:
+      - '&7View the full ranked leaderboard'
+      - '&7and your profile stats online!'
+      - ''
+      - '&d▶ zyrex.gg/leaderboard'
+    slot: 48
+
+  # ── Discord button ────────────────────────────────────────────
+  'discord':
+    material: PAPER
+    display_name: '&9&lJoin Discord'
+    lore:
+      - '&7Get notified of rank-ups,'
+      - '&7season resets, and tournaments.'
+      - ''
+      - '&9▶ discord.gg/zyrex'
+    slot: 50

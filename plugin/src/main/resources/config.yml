@@ -1,0 +1,164 @@
+# ============================================
+#         Zyrex Ranked - Configuration
+# ============================================
+
+database:
+  host: localhost
+  port: 3306
+  database: zyrex_ranked
+  username: root
+  password: yourpassword
+  pool-size: 10
+
+api:
+  # The URL of your Node.js backend API
+  url: https://api.zyrex.gg
+  # Secret key shared between plugin and API
+  secret: YOUR_API_SECRET_KEY_HERE
+
+elo:
+  starting-elo: 1000
+  placement-matches: 10
+  # K-factors per skill bracket
+  k-factor-placement: 40
+  k-factor-default: 20
+  k-factor-diamond: 16
+  k-factor-top100: 10
+  # Win streak bonus ELO per win after streak of 3
+  streak-bonus: 5
+  streak-threshold: 3
+  # Minimum ELO floor
+  min-elo: 100
+
+seasons:
+  # Season length in days
+  length: 90
+  # How much to compress ELO toward 1000 on reset (0.0-1.0)
+  soft-reset-factor: 0.30
+  current-season: 1
+
+gamemodes:
+  smp:
+    display-name: "SMP / Crystal PvP"
+    icon: DIAMOND_SWORD
+    arena-world: ranked_smp
+    kit: smp
+    min-players: 2
+    max-players: 2
+  pot:
+    display-name: "Pot PvP / NethPot"
+    icon: SPLASH_POTION
+    arena-world: ranked_pot
+    kit: pot
+    min-players: 2
+    max-players: 2
+  uhc:
+    display-name: "UHC"
+    icon: GOLDEN_APPLE
+    arena-world: ranked_uhc
+    kit: uhc
+    min-players: 2
+    max-players: 2
+  sword:
+    display-name: "Sword / Axe / Mace"
+    icon: NETHERITE_SWORD
+    arena-world: ranked_sword
+    kit: sword
+    min-players: 2
+    max-players: 2
+  spearmace:
+    display-name: "Spear Mace"
+    icon: MACE
+    arena-world: ranked_spearmace
+    kit: spearmace
+    min-players: 2
+    max-players: 2
+
+queue:
+  # Max time in queue before expanding ELO range (seconds)
+  expand-interval: 60
+  # ELO range to start matchmaking at
+  initial-elo-range: 100
+  # ELO range added each expand interval
+  elo-range-expansion: 50
+  # Max ELO range before any match is made
+  max-elo-range: 500
+
+ranks:
+  iron:
+    display: "Iron"
+    color: "&7"
+    min-elo: 0
+    max-elo: 1099
+  bronze:
+    display: "Bronze"
+    color: "&6"
+    min-elo: 1100
+    max-elo: 1299
+  silver:
+    display: "Silver"
+    color: "&f"
+    min-elo: 1300
+    max-elo: 1499
+  gold:
+    display: "Gold"
+    color: "&e"
+    min-elo: 1500
+    max-elo: 1699
+  platinum:
+    display: "Platinum"
+    color: "&b"
+    min-elo: 1700
+    max-elo: 1899
+  diamond1:
+    display: "Diamond I"
+    color: "&3"
+    min-elo: 1900
+    max-elo: 2099
+  diamond2:
+    display: "Diamond II"
+    color: "&3"
+    min-elo: 2100
+    max-elo: 2299
+  diamond3:
+    display: "Diamond III"
+    color: "&3"
+    min-elo: 2300
+    max-elo: 2399
+  netherite1:
+    display: "Netherite I"
+    color: "&8"
+    min-elo: 2400
+    max-elo: 2599
+  netherite2:
+    display: "Netherite II"
+    color: "&8"
+    min-elo: 2600
+    max-elo: 2799
+  netherite3:
+    display: "Netherite III"
+    color: "&8"
+    min-elo: 2800
+    max-elo: 2949
+  champion:
+    display: "Champion"
+    color: "&d"
+    min-elo: 2950
+    max-elo: 999999
+
+messages:
+  prefix: "&8[&dZyrex&8] "
+  queue-join: "&aYou joined the &e{gamemode} &aqueue. Position: &f{position}"
+  queue-leave: "&cYou left the queue."
+  match-found: "&aMatch found! Teleporting in &f3 &aseconds..."
+  match-start: "&aMatch started! &7Good luck."
+  match-end-win: "&aYou won! &f+{elo} ELO &7(&f{new_elo}&7)"
+  match-end-loss: "&cYou lost. &f-{elo} ELO &7(&f{new_elo}&7)"
+  match-end-draw: "&eMatch ended in a draw. &7No ELO change."
+  rank-up: "&6&lRANK UP! &eYou are now &f{rank}&e!"
+  rank-down: "&c&lRANK DOWN! &cYou dropped to &f{rank}&c."
+  streak: "&6Win streak: &f{streak}x &6(+{bonus} bonus ELO)"
+  no-permission: "&cYou don't have permission to do that."
+  player-not-found: "&cPlayer not found."
+  already-in-queue: "&cYou're already in a queue. Use /leavequeue first."
+  already-in-match: "&cYou're already in a match."
