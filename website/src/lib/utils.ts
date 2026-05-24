@@ -1,10 +1,15 @@
 export const GAMEMODES = [
-  { id: 'global',    label: 'Global',         color: '#a855f7', emoji: '🌐' },
-  { id: 'smp',       label: 'SMP / Crystal',  color: '#67e8f9', emoji: '💎' },
-  { id: 'pot',       label: 'Pot PvP',        color: '#4ade80', emoji: '🧪' },
-  { id: 'uhc',       label: 'UHC',            color: '#fde047', emoji: '🍎' },
-  { id: 'sword',     label: 'Sword / Axe',    color: '#fb923c', emoji: '⚔️' },
-  { id: 'spearmace', label: 'Spear Mace',     color: '#f0abfc', emoji: '🔱' },
+  { id: 'global',    label: 'Global',       color: '#a855f7', emoji: '🌐' },
+  { id: 'sword',     label: 'Sword',        color: '#fb923c', emoji: '⚔️' },
+  { id: 'mace',      label: 'Mace',         color: '#f0abfc', emoji: '🔨' },
+  { id: 'axe',       label: 'Axe',          color: '#ef4444', emoji: '🪓' },
+  { id: 'smp',       label: 'SMP',          color: '#67e8f9', emoji: '🏠' },
+  { id: 'diasmp',    label: 'Diamond SMP',  color: '#22d3ee', emoji: '💎' },
+  { id: 'pot',       label: 'Pot PvP',      color: '#4ade80', emoji: '🧪' },
+  { id: 'nethpot',   label: 'NethPot',      color: '#16a34a', emoji: '🍵' },
+  { id: 'crystal',   label: 'Crystal PvP',  color: '#e2e8f0', emoji: '🔮' },
+  { id: 'spearmace', label: 'Spear Mace',   color: '#c084fc', emoji: '🔱' },
+  { id: 'uhc',       label: 'UHC',          color: '#fde047', emoji: '🍎' },
 ] as const;
 
 export type GamemodeId = typeof GAMEMODES[number]['id'];
@@ -83,3 +88,5 @@ export function formatDuration(seconds: number) {
 export function getGamemode(id: string) {
   return GAMEMODES.find(g => g.id === id);
 }
+
+export const SERVER_IP = process.env.NEXT_PUBLIC_SERVER_IP || 'zyrex.xyz';
