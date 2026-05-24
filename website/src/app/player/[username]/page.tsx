@@ -106,7 +106,7 @@ export default function PlayerPage() {
       {/* ── Per-gamemode tabs ───────────────────────────────────────── */}
       <div className="flex gap-2 flex-wrap mb-4 overflow-x-auto no-scrollbar">
         {GAMEMODES.map(gm => {
-          const gmStats = stats[gm.id === 'global' ? null : gm.id];
+          const gmStats = stats[gm.id];
           if (gm.id === 'global') return null;
           return (
             <button
